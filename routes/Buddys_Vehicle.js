@@ -3,7 +3,7 @@ const router = express.Router();
 
 //CRUD Create - Retrieve - Update - Delete
 // 전체 Vehicle's ID 불러오기 
-router.get('/', (req, rest) => {
+router.get('/', (req, res) => {
     res.json ({
         msg: "전체 Buddy's Vehicle 불러옴"
     });
