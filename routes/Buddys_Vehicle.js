@@ -14,10 +14,22 @@ router.get('/', (req, res) => {
 
 //Buddy's Vehicle ID 등록하는 API
 router.post('/', (req, res) => {
+
+    const newBuddyVehicleId = {
+        buddyVehicleId: req.body.buddyVehicleId,
+        buddyId: req.body.buddyId,
+        vehicleType: req.body.vehicleType,
+        vehicleModel: req.body.vehicleModel,
+        vehicleColor: req.body.vehicleColor,
+        vehicleInsurance: req.body.vehicleInsurance
+    };
+
+
     res.json ({
-        msg: "Buddy's Vehicle ID 등록함"
-    })
-})
+        msg: "Buddy's Vehicle ID 등록함",
+        buddyVehicleInfo: newBuddyVehicleId
+    });
+});
 
 //특정 Buddy's Vehicle ID 불러오는 API
 // router.get ('/', (req, res) => {

@@ -15,10 +15,37 @@ router.get('/', (req, res) => {
 
 //Buddy's ID 등록하는 API
 router.post('/', (req, res) => {
+    
+    const newBuddyId = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        accountEmail: req.body.accountEmail,
+        accountPassword: req.body.accountPassword,
+        buddyDateofbirth: req.body.buddyDateofbirth,
+        termsconditions: req.body.termsconditions,
+        buddyProfileImage: req.body.buddyProfileImage,
+        buddyWorkType: req.body.buddyWorkType,
+        buddyABN: req.body.buddyABN,
+        registerGST: req.body.registerGST,
+        buddyContact: req.body.buddyContact
+    };
+
+
+
+
+
     res.json({
-        msg: "Buddy's ID 등록함"
+        msg: "Buddy's ID 등록함",
+        buddyInfo: newBuddyId
     });
 });
+
+
+
+
+
+
+
 
 //Buddy's ID 수정하는 API
 router.patch('/', (req, res) => {

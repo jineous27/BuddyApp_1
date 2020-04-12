@@ -5,6 +5,21 @@ const router = express.Router();
 //Get buddy task ID  
 
 router.get('/', (req, res) => {
+    
+    const buddyTaskId = {
+        buddyTaskId: req.body.buddyTaskId,
+        orderId: req.body.orderId,
+        deliveryBuddyId: req.body.deliveryBuddyId,
+        pickupDelay: req.body.pickupDelay,
+        delayReason: req.body.delayReason,
+        buddyComment: req.body.buddyComment,
+        userSignature: req.body.userSignature,
+        reportDeliveryuser: req.body.reportDeliveryuser
+    };
+    
+    
+    
+    
     res.json ({
         msg: "전체 buddy task ID 불러옴"
     });
