@@ -19,7 +19,6 @@ router.get('/', (req, res) => {
     
     
     
-    
     res.json ({
         msg: "전체 buddy task ID 불러옴"
     });
