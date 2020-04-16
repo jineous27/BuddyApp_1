@@ -19,21 +19,27 @@ const buddyIdSchema = mongoose.Schema(
             type: String,
             required: true
         },
-        Buddy_Account: {
-            type: 
+        Buddy_Account_Password: {
+            type: String,
+            required: true
 
         },
         Agree_TermsConditions: {
-            type: 
+            type: Boolean,
+            required: true 
         },
         Buddy_DOB: {
             type: Date,
-            required: true,
+            required: true
         },
         Buddy_Work_Type: {
+            type: String,
+            required: true
 
         },
         Buddy_ABN: {
+            type: Number,
+            required: true
 
         },
         Buddy_GST_Registration: {
@@ -41,9 +47,13 @@ const buddyIdSchema = mongoose.Schema(
             default: false
         },
         Buddy_Contract: {
+            type: Number,
+            required: true
 
         },
-        Buddy_Emergence: {
+        Buddy_Emergence_Contact: {
+            Type: Number,
+            required: true
 
         }
 
