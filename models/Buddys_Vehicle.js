@@ -26,7 +26,7 @@ const buddyVehicleIdSchema = mongoose.Schema(
             required: true
         },
         vehicle_insurance_documents: { //여기서 어떻게 해야하지? 첨부파일?//
-            type: 
+            type: String
         }
 
 

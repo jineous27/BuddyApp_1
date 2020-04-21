@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const buddyIdModel = require("../models/Buddy_ID");
+
 
 //CRUD Create-Retrieve-Update-Delete 를 만드는게 핵심이다//
 
@@ -16,28 +18,37 @@ router.get('/', (req, res) => {
 //Buddy's ID 등록하는 API
 router.post('/', (req, res) => {
     
-    const newBuddyId = {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        accountEmail: req.body.accountEmail,
-        accountPassword: req.body.accountPassword,
-        buddyDateofbirth: req.body.buddyDateofbirth,
-        termsconditions: req.body.termsconditions,
-        buddyProfileImage: req.body.buddyProfileImage,
-        buddyWorkType: req.body.buddyWorkType,
-        buddyABN: req.body.buddyABN,
-        registerGST: req.body.registerGST,
-        buddyContact: req.body.buddyContact
-    };
-
-
-
-
-
-    res.json({
-        msg: "Buddy's ID 등록함",
-        buddyInfo: newBuddyId
+    const newBuddyId = new buddyIdModel({
+        Buddy_First_Name: req.body.Buddy_First_Name,
+        Buddy_Last_Name: req.body.Buddy_Last_Name,
+        Buddy_Account_Email: req.body.Buddy_Account_Email,
+        Buddy_Account_Password: req.body.Buddy_Account_Password,
+        Buddy_DOB: req.body.Buddy_DOB,
+        Buddy_Work_Type: req.body.Buddy_Work_Type,
+        Buddy_ABN: req.body.Buddy_ABN,
+        Buddy_GST_Registration: req.body.Buddy_GST_Registration,
+        Buddy_Contract: req.body.Buddy_Contract,
+        Buddy_Emergence_Contact:req.body.Buddy_Emergence_Contact
     });
+
+    newBuddyId 
+        .save()
+        .then(result => {
+            res.status(201).json({
+                message: 'Handling POST requests to buddy Id',
+                createdBuddyIdInfo: result
+            })
+        })
+        .catch(err => {
+            res.status(500).json({
+                error: err.message
+            });
+        });
+
+    // res.json({
+    //     msg: "Buddy's ID 등록함",
+    //     buddyInfo: newBuddyId
+    // });
 });
 
 

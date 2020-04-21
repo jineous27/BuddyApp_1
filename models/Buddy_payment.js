@@ -3,7 +3,7 @@ const buddyPaymentSchema = mongoose.Schema(
     {
         delivery_buddy_id: {
             type: String,
-            required: 
+            required: true
         },
 
     },

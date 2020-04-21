@@ -3,14 +3,14 @@ const deliveryOrderStatusSchema = mongoose.Schema(
     {
         delivery_status_id: {
             type: Number,
-            required: 
+            required: true
         },
         buddy_task_id: {
             type: Number,
             required: true
         },
         delivery_order_status_id: {
-            type: Number,
+            type: Number
         }
 
     },

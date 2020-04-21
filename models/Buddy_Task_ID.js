@@ -41,7 +41,7 @@ const buddyTaskIdSchema = mongoose.Schema(
             type: Number,
         },
         buddy_task_status: {
-            type: 
+            type: String,
         },
 
     },
