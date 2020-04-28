@@ -19,6 +19,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     
     const newBuddyId = new buddyIdModel({
+        Deliery_Buddy_Id: req.body.Delivery_Buddy_Id,
         Buddy_First_Name: req.body.Buddy_First_Name,
         Buddy_Last_Name: req.body.Buddy_Last_Name,
         Buddy_Account_Email: req.body.Buddy_Account_Email,
@@ -28,7 +29,8 @@ router.post('/', (req, res) => {
         Buddy_ABN: req.body.Buddy_ABN,
         Buddy_GST_Registration: req.body.Buddy_GST_Registration,
         Buddy_Contract: req.body.Buddy_Contract,
-        Buddy_Emergence_Contact:req.body.Buddy_Emergence_Contact
+        Buddy_Emergence_Name:req.body.Buddy_Emergence_Name,
+        Buddy_Emergence_Number:req.body.Buddy_Emergence_Number
     });
 
     newBuddyId 

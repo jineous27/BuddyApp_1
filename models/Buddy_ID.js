@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const buddyIdSchema = mongoose.Schema(
     {
 
-        // Delivery_Buddy_ID: {
+        // Delivery_Buddy_Id: {
         //     type: Number,
         //     required: true
         // },
@@ -47,10 +47,13 @@ const buddyIdSchema = mongoose.Schema(
             required: true
 
         },
-        Buddy_Emergence_Contact: {
+        Buddy_Emergence_Name: {
+            type: String,
+            required: true
+        },
+        Buddy_Emergence_Number: {
             type: Number,
             required: true
-
         }
 
     },
