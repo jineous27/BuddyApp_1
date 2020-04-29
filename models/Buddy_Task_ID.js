@@ -24,7 +24,7 @@ const buddyTaskIdSchema = mongoose.Schema(
             type: String
         },
         users_signature: {
-            type: Attachments  
+            type: String,  
         },
         user_delivery_report: {
             type: Boolean,
